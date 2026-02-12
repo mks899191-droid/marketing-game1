@@ -22,7 +22,8 @@ const RunnerGame: React.FC<RunnerGameProps> = ({ onWin, onLose }) => {
   const [isStunned, setIsStunned] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const requestRef = useRef<number>();
+  // Fix: Added initial value 0 to satisfy TypeScript requirement for 1 argument in useRef<number>()
+  const requestRef = useRef<number>(0);
   const lastSpawnTime = useRef<number>(0);
   const playerYRef = useRef(GAME_HEIGHT / 2);
   const ceoDistanceRef = useRef(350);
